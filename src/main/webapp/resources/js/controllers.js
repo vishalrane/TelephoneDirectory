@@ -12,13 +12,24 @@ controller.controller(
 		"searchController",
 		function($scope, $http, $routeParams) {
 			$scope.questionNo = 1;			
-			$http.get('data/questions.json').success(function (questions){
-				var questionNo = Math.floor((Math.random() * 2) + 0);
-			    $scope.question = questions[questionNo];
+			$http.get('rest/dir/find').success(function (questions){
+				/*var questionNo = Math.floor((Math.random() * 2) + 0);
+			    $scope.question = questions[questionNo];*/
+				$scope.question = questions; 
 			  }); 
-			$scope.selectAnswer = function (question, choice) {
-		       console.log(question, choice)
+			$scope.selectAnswer = function (question) {
+				$http.get('rest/dir/checkAns/'+question.name+'/'+question.selected).success(function (responseFlag){
+					console.log(responseFlag,responseFlag == "true")
+					if(responseFlag == "true"){
+				    	  angular.element( document.querySelector( '#result' ) ).html("<span style=' color: green;'>Correct Answer</span>");
+				       }else{
+				    	   angular.element( document.querySelector( '#result' ) ).html("<span style=' color: #b94a48;'>Wrong Answer</span>");
+				       } 
+				  }); 
+		       
 		    }; 
+		    
+		    
 		});
 
 
