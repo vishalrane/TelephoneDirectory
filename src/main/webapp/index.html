@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app="quiz-app">
+<head>
+  <meta charset="utf-8">
+  <title>Quiz app</title>
+  <link rel="stylesheet" href="resources/bootstrap_2.3.1/css/bootstrap.css"/>
+  <link rel="stylesheet" href="resources/bootstrap_2.3.1/css/bootstrap-responsive.min.css"/>
+  <link rel="stylesheet" href="resources/css/app.css"/>
+  <script src="resources/lib/angular/angular.js"></script>
+  <script src="resources/js/app.js"></script>
+  <script src="resources/js/controllers.js"></script>
+  
+</head>
+<body>
+
+  <div class="page-header">
+    <h1 class="text-center">Quiz App</h1>
+  </div>
+	<div class="sidebar-nav" ng-controller="navController">
+	    <ul class="nav nav-pills">
+	        <li  ng-class="navClass('add')"><a href='#/add'  ng-click="nav.doClick()">Add</a></li>
+	        <li  ng-class="navClass('search')"><a href='#/search' ng-click="nav.doClick()">Search</a></li>
+	    </ul>
+	</div>
+  <div class="container-fluid" ng-view>
+  
+  </div>
+
+  
+</body>
+</html>
+
+
+
+</body>
+</html>

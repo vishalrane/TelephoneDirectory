@@ -1,0 +1,36 @@
+<div id="questions">
+    <div class="item">
+       <div class="span12 question">
+          <h3>{{question.name}}</h3>
+          <label class="radio" ng-repeat="choice in question.choice">
+            <input type="radio" name="choice" value="{{choice}}"  ng-change="selectAnswer(question)" ng-model="question.selected">
+            {{choice}}
+          </label>
+        </div>
+      <div class="text-center">
+        <a  class="btn btn-primary">View Result</a>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+<!--     <h2>Hello {{helloTo.title}} !</h2>
+<ol>
+   <li ng-repeat="theItem in helloTo.items"  ng-click="helloTo.doClick(theItem,$event)">{{theItem.text}}</li>
+</ol>
+<ol>
+   <li ng-repeat="(name, value) in helloTo.myObject">{{$middle}} {{name}} = {{value}}</li>
+</ol>
+<div ng-repeat="item in helloTo.items | filter: itemFilter">{{item.text}}</div>
+
+<ol>
+    <li ng-repeat="item in helloTo.items | orderBy:sortField">
+        {{item.text}} 
+    </li>
+</ol>
+<div>
+    <div ng-click="helloTo.doClick()">Click here</div>
+</div>
+ -->
